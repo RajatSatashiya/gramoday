@@ -10,21 +10,13 @@ module.exports.createReport = async (req, res) => {
     await commodity.save();
     return res.status(201).json({ status: "success", reportID: commodity._id });
   } catch (e) {
-    // console.log("error: " + e);
     return res.status(400).json({ status: "failure", error: e });
   }
 };
 
 module.exports.getReport = async (req, res) => {
   try {
-    const report = await Commodity.findById(req.query.reportID, {
-      _id: 0,
-      __v: 0,
-      updatedAt: 0,
-    });
-
     const report2 = await Commodity.findById(req.query.reportID);
-
     const result = await Commodity.aggregate([
       {
         $match: {
@@ -52,8 +44,6 @@ module.exports.getReport = async (req, res) => {
         },
       },
     ]);
-    // console.log(result);
-    // return res.status(201).json({ result });
     return res.status(201).json({
       _id: report2._id,
       cmdtyName: report2.cmdtyName,
@@ -66,7 +56,6 @@ module.exports.getReport = async (req, res) => {
       price: result[0].avg,
     });
   } catch (e) {
-    console.log(e);
     return res.status(400).json({ status: "failure", error: e });
   }
 };

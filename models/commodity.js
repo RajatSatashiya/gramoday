@@ -3,11 +3,6 @@ const Schema = mongoose.Schema;
 
 const commoditySchema = new Schema(
   {
-    // reportID: {
-    //   type: String,
-    //   unique: true,
-    //   required: true,
-    // },
     userID: {
       type: String,
       unique: true,
@@ -45,5 +40,5 @@ const commoditySchema = new Schema(
   }
 );
 
-const commodity = mongoose.model("Commodity", commoditySchema);
+const commodity = mongoose.model("commodity", commoditySchema);
 module.exports = commodity;

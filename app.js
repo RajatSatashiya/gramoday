@@ -1,8 +1,8 @@
 //env file
 require("dotenv").config();
 
-const { urlencoded } = require("express");
 //imports
+const { urlencoded } = require("express");
 const express = require("express");
 const cors = require("cors");
 const { default: mongoose } = require("mongoose");
