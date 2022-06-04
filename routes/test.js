@@ -15,6 +15,8 @@ module.exports = router;
 
 /* testing description
 
+the get requests are made so the user can see the results directly on the browser
+
 "/1" -> create report for user-1 (as given in question)
 copy the reportID from response and paste it in the env file for "/4" route.
 
