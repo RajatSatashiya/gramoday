@@ -4,18 +4,22 @@ require("dotenv").config();
 const { urlencoded } = require("express");
 //imports
 const express = require("express");
+const cors = require("cors");
 const { default: mongoose } = require("mongoose");
 const reports = require("./routes/reports");
+const test = require("./routes/test");
 const app = express();
 
 //middleware
 app.use(express.json());
+app.use(cors());
 
 //routes
 app.get("/", (req, res) => {
   res.send("hello my friends");
 });
 app.use("/reports", reports);
+app.use("/test", test);
 
 //mongoose connection
 mongoose

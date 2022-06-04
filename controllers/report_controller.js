@@ -10,7 +10,7 @@ module.exports.createReport = async (req, res) => {
     await commodity.save();
     return res.status(201).json({ status: "success", reportID: commodity._id });
   } catch (e) {
-    console.log("error: " + e);
+    // console.log("error: " + e);
     return res.status(400).json({ status: "failure", error: e });
   }
 };
@@ -52,7 +52,7 @@ module.exports.getReport = async (req, res) => {
         },
       },
     ]);
-    console.log(result);
+    // console.log(result);
     // return res.status(201).json({ result });
     return res.status(201).json({
       _id: report2._id,
