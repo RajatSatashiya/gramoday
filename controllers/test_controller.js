@@ -40,7 +40,6 @@ module.exports.test2 = async (req, res) => {
     });
     return res.status(201).json({ result: result.data });
   } catch (e) {
-    console.log(e);
     return res.status(400).json({ status: "failure", error: e });
   }
 };
@@ -72,7 +71,8 @@ module.exports.test3 = async (req, res) => {
 //description: used correct ID to get correct results
 module.exports.test4 = async (req, res) => {
   try {
-    var url = process.env.AXIOS_GETURL + process.env.reportID;
+    var reportID = "629bcb830494ec05f56f5937";
+    var url = process.env.AXIOS_GETURL + reportID;
     const result = await axios.get(`${url}`);
     return res.status(201).json({ status: "success", result: result.data });
   } catch (e) {

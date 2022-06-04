@@ -18,7 +18,8 @@ module.exports = router;
 the get requests are made so the user can see the results directly on the browser
 
 "/1" -> create report for user-1 (as given in question)
-copy the reportID from response and paste it in the env file for "/4" route.
+copy the reportID from response and paste it in the "controllers/test_controller" file 
+under reportID variable for test-4 function.
 
 "/2" -> create report for user-2 (as given in question)
 "/3" -> create report with same details as user-1 (gives error);
